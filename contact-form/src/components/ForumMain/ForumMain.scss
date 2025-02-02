@@ -1,0 +1,50 @@
+.query-type-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .query-buttons {
+    display: flex;
+    gap: 10px; 
+  }
+  
+  .query-button {
+    flex: 1; 
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .query-button.active, .consent-button.active {
+    background: #036b52;
+    color: white;
+    border-color: #036b52;
+  }
+  
+  .query-button:hover {
+    background: #f0f0f0;
+  }
+  .consent-button-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+ .consent-button {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.consent-button.unactive {
+    background: white;
+    border-color: #ccc;
+  }

@@ -1,81 +1,85 @@
-import React from "react";
+
+import React, { useState } from "react";
+import "./ForumMain.scss";
 export const ForumMain = () => {
+  const [queryType, setQueryType] = useState("");
+  const [constentType, setConstentType] = useState("");
   return (
     <>
       <div className="main-conteiner">
         <form action="form" className="form-contact">
-        <h2 className="first-header">Contact us</h2>
-        <div className="name-main">
-          <div className="first-name-conteiner">
-            <h3 className="first-name-header">First Name</h3>
-          </div>
-          <div className="first-input-conteiner">
-            <label className="first-input-holder">
+          <h2 className="first-header">Contact us</h2>
+          <div className="name-main">
+            <div className="first-name-conteiner">
+              <h3 className="first-name-header">First Name <span>*</span></h3>
+            </div>
+            <div className="first-input-conteiner">
               <input type="text" className="first-input" alt="first-name" />
-            </label>
-          </div>
-        </div>
-        <div className="last-main">
-          <div className="last-name-conteiner">
-            <h3 className="last-name-header">Last Name</h3>
-          </div>
-          <div className="last-input-conteiner">
-            <label className="last-input-holder">
-              <input type="text" className="last-input" alt="last-name" />
-            </label>
-          </div>
-        </div>
-        <div className="email-main">
-          <div className="email-holder">
-            <h3 className="email-header">Email Adress</h3>
-          </div>
-          <div className="email-input-conteiner">
-            <label className="email-input-holder">
-              <input type="text" className="email-input" alt="email" />
-            </label>
-          </div>
-        </div>
-        <div className="general-query-conteiner">
-          <div className="general-query-holder">
-            <h3 className="general-query-header">Query Type</h3>
-          </div>
-          <div className="general-query-input-conteiner">
-            <label className="general-query-input-holder">
-              <input type="text" className="general-query-input" alt="general">
-                {/* <button className="general-query-button">General Enquiry</button> */}
-              </input>
-            </label>
-            <div className="support-query-conteiner">
-              <div className="support-query-input-conteiner">
-                <label className="support-query-input-holder">
-                  <input type="text" className="support-query-input">
-                    {/* <button className="support-query-button">Support Request</button> */}
-                  </input>
-                </label>
-              </div>
             </div>
           </div>
-        </div>
-        <div className="message-conteiner">
+          <div className="last-main">
+            <div className="last-name-conteiner">
+              <h3 className="last-name-header">Last Name <span>*</span></h3>
+            </div>
+            <div className="last-input-conteiner">
+              <input type="text" className="last-input" alt="last-name" />
+            </div>
+          </div>
+          <div className="email-main">
+            <div className="email-holder">
+              <h3 className="email-header">Email Adress <span>*</span></h3>
+            </div>
+            <div className="email-input-conteiner">
+              <input type="text" className="email-input" alt="email" />
+            </div>
+          </div>
+          <div className="general-query-conteiner">
+            
+              <h3 className="general-query-header">Query Type <span>*</span></h3>
+            
+            <div className="general-query-button">
+            <button 
+              type="button" 
+              className={`query-button ${queryType === "general" ? "active" : ""}`}
+              onClick={() => setQueryType("general")}
+            >
+              General Enquiry
+            </button>
+            <button 
+              type="button" 
+              className={`query-button ${queryType === "support" ? "active" : ""}`}
+              onClick={() => setQueryType("support")}
+            >
+              Support Request
+            </button>
+          </div>
+          </div>
+          <div className="message-conteiner">
             <div className="message-holder">
-                <h3 className="message-header">Message</h3>
+              <h3 className="message-header">Message <span>*</span></h3>
             </div>
             <div className="message-input-conteiner">
-                <label className="message-input-holder">
-                    <input type="text" className="message-input"/>
-                </label>
+                <input type="text" className="message-input" />
             </div>
-        </div>
-        <div className="consent-button-conteiner">
-            <button className="constent-button"/>
-            <p className="consent-text">I consent to bieng contacted by the team</p>
-        </div>
-        <div className="submit-button-conteiner">
+          </div>
+          <div className="consent-button-conteiner">
+            <button type="button"
+             className={`consent-button ${constentType === "accept" ? "active" : "unactive"}` }
+             onClick={() => setConstentType(constentType === `accept` ?  `` : `accept`)}
+
+              > 
+              
+              </button>
+             <span className="consent-text"> I consent to being contacted by the team <span>*</span></span>
+          </div>
+          <div className="submit-button-conteiner">
             <button className="submit-button">Submit</button>
-        </div>
+          </div>
         </form>
       </div>
     </>
   );
 };
 export default ForumMain;
+
+
