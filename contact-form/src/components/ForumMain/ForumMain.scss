@@ -1,14 +1,20 @@
-.query-type-container {
+.general-query-conteiner {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
   
-  .query-buttons {
+  .general-query-buttons, .email-input-conteiner, .message-input-conteiner  {
     display: flex;
-    gap: 10px; 
+    gap: 15px; 
   }
-  
+  .name-inputs-conteiner {
+    display: flex;
+    gap: 7px;
+  }
+  .first-input:hover, .last-input:hover, .email-input:hover, .message-input:hover {
+    border-color: #036b52;
+  }
   .query-button {
     flex: 1; 
     padding: 10px 20px;
@@ -22,19 +28,22 @@
   
   .query-button.active, .consent-button.active {
     background: #036b52;
-    color: white;
+    color: black;
     border-color: #036b52;
   }
   
   .query-button:hover {
     background: #f0f0f0;
   }
-  .consent-button-container {
+  .consent-button-conteiner {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-top: 3%;
   }
-
+.consent-text {
+  font-size: 17px;
+}
  .consent-button {
   width: 15px;
   height: 15px;
@@ -48,3 +57,62 @@
     background: white;
     border-color: #ccc;
   }
+  .name-main {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .first-input, .last-input {
+    flex: 1; 
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  .headers-conteiner {
+    display: flex;
+    gap: 42.5%;
+  }
+  .email-input {
+    flex: 1; 
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+.message-input {
+  flex: 1; 
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    height: 100px;
+}
+.submit-button-conteiner {
+  display: flex;
+  margin-top: 3%;
+}
+.submit-button:hover {
+  background-color:#013A2D;
+}
+.submit-button {
+  flex: 1; 
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #036b52;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  height: 60px;
+}
