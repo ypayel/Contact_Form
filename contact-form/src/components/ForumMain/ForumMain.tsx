@@ -11,10 +11,10 @@ export const ForumMain = () => {
           <div className="name-main">
             <div className="headers-conteiner">
               <h3 className="first-name-header">
-                First Name <span>*</span>
+                First Name <span className="text-star">*</span>
               </h3>
               <h3 className="last-name-header">
-                Last Name <span>*</span>
+                Last Name <span className="text-star">*</span>
               </h3>
             </div>
             <div className="name-inputs-conteiner">
@@ -26,7 +26,7 @@ export const ForumMain = () => {
           <div className="email-main">
             <div className="email-header-conteiner">
               <h3 className="email-header">
-                Email Adress <span>*</span>
+                Email Adress <span className="text-star">*</span>
               </h3>
             </div>
             <div className="email-input-conteiner">
@@ -35,7 +35,7 @@ export const ForumMain = () => {
           </div>
           <div className="general-query-conteiner">
             <h3 className="general-query-header">
-              Query Type <span>*</span>
+              Query Type <span className="text-star">*</span>
             </h3>
             <div className="general-query-buttons">
               <button
@@ -61,7 +61,7 @@ export const ForumMain = () => {
           <div className="message-conteiner">
             <div className="message-holder">
               <h3 className="message-header">
-                Message <span>*</span>
+                Message <span className="text-star">*</span>
               </h3>
             </div>
             <div className="message-input-conteiner">
@@ -79,7 +79,7 @@ export const ForumMain = () => {
               }
             ></button>
             <span className="consent-text">
-              I consent to being contacted by the team <span>*</span>
+              I consent to being contacted by the team <span className="text-star">*</span>
             </span>
           </div>
           <div className="submit-button-conteiner">
