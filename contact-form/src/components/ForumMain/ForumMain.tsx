@@ -3,10 +3,49 @@ import "./ForumMain.scss";
 export const ForumMain = () => {
   const [queryType, setQueryType] = useState("");
   const [constentType, setConstentType] = useState("");
+  const [txt, setTxt] = useState('');
+  const [secondTxt, secondSetTxt] = useState("");
+  const [messageSent, setMessageSent] = useState("");
+  const onInputChange = e => {
+    const { value } = e.target;
+    console.log('Input value: ', value);
+
+    const re = /^[A-Za-z]*$/;
+    if (value === "" || re.test(value)) {
+      setTxt(value);
+    }
+  }
+
+  const secondOnInputChange = e => {
+    const {value } = e.target;
+    console.log('Second input value: ', value);
+
+    const re = /^[A-Za-z]*$/;
+    if(value === "" || re.test(value)) {
+      secondSetTxt(value)
+    }else if(value === "") {
+      console.log()
+      
+    }
+
+    
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+    setMessageSent(true);
+    setTimeout(() => setMessageSent(false), 5000);
+  };
+  
   return (
     <>
+    {messageSent && (
+        <div className="success-message">
+          <strong className="message-strong">Message Sent!</strong>  
+          <p className="message-success-paragraf">Thanks for completing the form. We will be in touch soon!</p>
+        </div>
+      )}
       <div className="main-conteiner">
-        <form action="form" className="form-contact">
+        <form action="form" className="form-contact" onSubmit={handleSubmit}>
           <h2 className="first-header">Contact us</h2>
           <div className="name-main">
             <div className="headers-conteiner">
@@ -18,9 +57,9 @@ export const ForumMain = () => {
               </h3>
             </div>
             <div className="name-inputs-conteiner">
-              <input type="text" className="first-input" alt="first-name" />
+              <input type="text" className="first-input" alt="first-name"  value={txt} onChange={onInputChange } />
               <div></div>
-              <input type="text" className="last-input" alt="last-name" />
+              <input type="text" className="last-input" alt="last-name" value={secondTxt} onChange={secondOnInputChange} />
             </div>
           </div>
           <div className="email-main">
@@ -83,7 +122,7 @@ export const ForumMain = () => {
             </span>
           </div>
           <div className="submit-button-conteiner">
-            <button className="submit-button">Submit</button>
+            <button className="submit-button" type="submit">Submit</button>
           </div>
         </form>
       </div>

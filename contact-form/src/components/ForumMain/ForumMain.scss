@@ -130,7 +130,7 @@ body {
   display: flex;
   flex-direction: column;
     margin-left: 25%;
-    margin-top: 5%;
+    
 }
 
 .form-contact {
@@ -145,4 +145,26 @@ body {
 }
 .text-star {
   color: #036b52;
+}
+
+.success-message {
+  background-color: #2D4A3D;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 10px;
+  width: 450px;
+  height: 50px;
+  
+}
+
+.success-message, .message-strong {
+  display: block;
+  font-size: 18px;
+  margin-left: 29.5%;
+}
+
+ .message-success-paragraf {
+  margin: 2%;
 }
