@@ -1,51 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ForumMain.scss";
 export const ForumMain = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [queryType, setQueryType] = useState("");
-  const [constentType, setConstentType] = useState("");
-  const [txt, setTxt] = useState('');
-  const [secondTxt, secondSetTxt] = useState("");
-  const [messageSent, setMessageSent] = useState("");
-  const onInputChange = e => {
-    const { value } = e.target;
-    console.log('Input value: ', value);
+  const [consentGiven, setConsentGiven] = useState(false);
+  const [messageSent, setMessageSent] = useState(false);
+  const [errors, setErrors] = useState({});
 
-    const re = /^[A-Za-z]*$/;
-    if (value === "" || re.test(value)) {
-      setTxt(value);
-    }
-  }
+  useEffect(() => {
+    console.log("Stan messageSent został zmieniony:", messageSent);
+}, [messageSent]);
 
-  const secondOnInputChange = e => {
-    const {value } = e.target;
-    console.log('Second input value: ', value);
+const validateForm = () => {
+  let newErrors: { [key: string]: string } = {};
 
-    const re = /^[A-Za-z]*$/;
-    if(value === "" || re.test(value)) {
-      secondSetTxt(value)
-    }else if(value === "") {
-      console.log()
-      
-    }
+  if (!firstName.trim()) newErrors.firstName = "To pole jest wymagane";
+  if (!lastName.trim()) newErrors.lastName = "To pole jest wymagane";
+  if (!email.match(/^\S+@\S+\.\S+$/)) newErrors.email = "Wprowadź poprawny adres e-mail";
+  if (!queryType) newErrors.queryType = "Wybierz rodzaj zapytania";
+  if (!message.trim()) newErrors.message = "To pole jest wymagane";
+  if (!consentGiven) newErrors.consent = "Aby wysłać formularz, musisz wyrazić zgodę na kontakt";
 
-    
-  }
-  const handleSubmit = (e) => {
-    e.preventDefault(); 
-    setMessageSent(true);
-    setTimeout(() => setMessageSent(false), 5000);
-  };
-  
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0; 
+};
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (validateForm()) {
+      console.log("The form has been validated correctly!");
+      setMessageSent(true);
+      // setTimeout(() => {
+      //     setMessageSent(false);
+      //     console.log("Message hidden!");
+      // }, 5000);
+  } 
+  // else {
+  //     setTimeout(() => console.log("Current errors in the form:", errors), 0);
+  // }
+};
+
   return (
     <>
     {messageSent && (
-        <div className="success-message">
+        <div className="success-message" >
           <strong className="message-strong">Message Sent!</strong>  
-          <p className="message-success-paragraf">Thanks for completing the form. We will be in touch soon!</p>
+          <p className="message-success-paragraf">
+            Thanks for completing the form. We will be in touch soon!
+          </p>
         </div>
       )}
       <div className="main-conteiner">
-        <form action="form" className="form-contact" onSubmit={handleSubmit}>
+        <form  className="form-contact" onSubmit={handleSubmit}>
           <h2 className="first-header">Contact us</h2>
           <div className="name-main">
             <div className="headers-conteiner">
@@ -57,9 +65,10 @@ export const ForumMain = () => {
               </h3>
             </div>
             <div className="name-inputs-conteiner">
-              <input type="text" className="first-input" alt="first-name"  value={txt} onChange={onInputChange } />
-              <div></div>
-              <input type="text" className="last-input" alt="last-name" value={secondTxt} onChange={secondOnInputChange} />
+              <input type="text" className={`first-input ${errors.firstName ? "error" :""}`} alt="first-name"  value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+              {errors.firstName && <span className="error-text">{errors.firstName}</span>}
+              <input type="text" className={`last-input ${errors.lastName ? "error" : ""}`} alt="last-name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+              {errors.lastName && <span className="error-text">{errors.lastName}</span>}
             </div>
           </div>
           <div className="email-main">
@@ -69,7 +78,8 @@ export const ForumMain = () => {
               </h3>
             </div>
             <div className="email-input-conteiner">
-              <input type="text" className="email-input" alt="email" />
+              <input type="text" className={`email-input ${errors.email ? "error" : ""}`} value={email}  onChange={(e) => setEmail(e.target.value)} alt="email" />
+              {errors.email && <span className="error-text">{errors.email}</span>}
             </div>
           </div>
           <div className="general-query-conteiner">
@@ -79,48 +89,37 @@ export const ForumMain = () => {
             <div className="general-query-buttons">
               <button
                 type="button"
-                className={`query-button ${
-                  queryType === "general" ? "active" : ""
-                }`}
+                className={`query-button ${queryType === "general" ? "active" : ""}`}
                 onClick={() => setQueryType("general")}
               >
                 General Enquiry
               </button>
               <button
                 type="button"
-                className={`query-button ${
-                  queryType === "support" ? "active" : ""
-                }`}
+                className={`query-button ${queryType === "support" ? "active" : ""}`}
                 onClick={() => setQueryType("support")}
               >
                 Support Request
               </button>
             </div>
+            {errors.queryType && <span className="error-text">{errors.queryType}</span>}
           </div>
           <div className="message-conteiner">
-            <div className="message-holder">
               <h3 className="message-header">
                 Message <span className="text-star">*</span>
               </h3>
-            </div>
             <div className="message-input-conteiner">
-              <input type="text" className="message-input" />
+              <textarea className={`message-input ${errors.message ? "error" : ""}`}  onChange={(e) => setMessage(e.target.value)}></textarea>
+              {errors.message && <span className="error-text">{errors.message}</span>}
             </div>
           </div>
           <div className="consent-button-conteiner">
-            <button
-              type="button"
-              className={`consent-button ${
-                constentType === "accept" ? "active" : "unactive"
-              }`}
-              onClick={() =>
-                setConstentType(constentType === `accept` ? `` : `accept`)
-              }
-            ></button>
+            <input type="checkbox" checked={consentGiven} onChange={(e) => setConsentGiven(!consentGiven)}/>
             <span className="consent-text">
               I consent to being contacted by the team <span className="text-star">*</span>
             </span>
           </div>
+          {errors.consent && <span className="error-text">{errors.consent}</span>}
           <div className="submit-button-conteiner">
             <button className="submit-button" type="submit">Submit</button>
           </div>

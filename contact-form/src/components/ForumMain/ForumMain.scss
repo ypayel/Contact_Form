@@ -1,3 +1,4 @@
+
 body {
   background-color: #F0FFE8;
 }
@@ -77,7 +78,7 @@ body {
   }
   .headers-conteiner {
     display: flex;
-    gap: 42.5%;
+    gap: 34%;
   }
   .email-input {
     flex: 1; 
@@ -146,6 +147,18 @@ body {
 .text-star {
   color: #036b52;
 }
+@keyframes appear {
+  0% {
+    opacity: 0;
+    border-radius: 25px;
+  }
+  30% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+}
 
 .success-message {
   background-color: #2D4A3D;
@@ -156,7 +169,8 @@ body {
   margin-top: 10px;
   width: 450px;
   height: 50px;
-  
+  animation: appear 6s 0.5 both;
+  opacity: 0;
 }
 
 .success-message, .message-strong {
@@ -167,4 +181,7 @@ body {
 
  .message-success-paragraf {
   margin: 2%;
+}
+.error-text {
+  color: red;
 }
