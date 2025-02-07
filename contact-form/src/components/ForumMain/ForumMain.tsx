@@ -32,14 +32,8 @@ const handleSubmit = (e) => {
   if (validateForm()) {
       console.log("The form has been validated correctly!");
       setMessageSent(true);
-      // setTimeout(() => {
-      //     setMessageSent(false);
-      //     console.log("Message hidden!");
-      // }, 5000);
   } 
-  // else {
-  //     setTimeout(() => console.log("Current errors in the form:", errors), 0);
-  // }
+  
 };
 
   return (

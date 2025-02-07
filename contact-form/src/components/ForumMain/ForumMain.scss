@@ -185,3 +185,14 @@ body {
 .error-text {
   color: red;
 }
+
+@media screen and (max-width:320px) {
+  .main-conteiner {
+    width: 80%;
+    height: 50%;
+  }
+  .form-contact {
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+}
