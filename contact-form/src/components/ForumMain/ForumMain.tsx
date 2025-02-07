@@ -60,9 +60,9 @@ const handleSubmit = (e) => {
             </div>
             <div className="name-inputs-conteiner">
               <input type="text" className={`first-input ${errors.firstName ? "error" :""}`} alt="first-name"  value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-              {errors.firstName && <span className="error-text">{errors.firstName}</span>}
+              {errors.firstName && <span className="error-text-first-input">{errors.firstName}</span>}
               <input type="text" className={`last-input ${errors.lastName ? "error" : ""}`} alt="last-name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-              {errors.lastName && <span className="error-text">{errors.lastName}</span>}
+              {errors.lastName && <span className="error-text-last-input">{errors.lastName}</span>}
             </div>
           </div>
           <div className="email-main">
@@ -73,7 +73,7 @@ const handleSubmit = (e) => {
             </div>
             <div className="email-input-conteiner">
               <input type="text" className={`email-input ${errors.email ? "error" : ""}`} value={email}  onChange={(e) => setEmail(e.target.value)} alt="email" />
-              {errors.email && <span className="error-text">{errors.email}</span>}
+              {errors.email && <span className="error-text-email-input">{errors.email}</span>}
             </div>
           </div>
           <div className="general-query-conteiner">
@@ -96,7 +96,7 @@ const handleSubmit = (e) => {
                 Support Request
               </button>
             </div>
-            {errors.queryType && <span className="error-text">{errors.queryType}</span>}
+            {errors.queryType && <span className="error-text-buttons">{errors.queryType}</span>}
           </div>
           <div className="message-conteiner">
               <h3 className="message-header">
@@ -104,7 +104,7 @@ const handleSubmit = (e) => {
               </h3>
             <div className="message-input-conteiner">
               <textarea className={`message-input ${errors.message ? "error" : ""}`}  onChange={(e) => setMessage(e.target.value)}></textarea>
-              {errors.message && <span className="error-text">{errors.message}</span>}
+              {errors.message && <span className="error-text-message">{errors.message}</span>}
             </div>
           </div>
           <div className="consent-button-conteiner">
@@ -113,7 +113,7 @@ const handleSubmit = (e) => {
               I consent to being contacted by the team <span className="text-star">*</span>
             </span>
           </div>
-          {errors.consent && <span className="error-text">{errors.consent}</span>}
+          {errors.consent && <span className="error-text-consent">{errors.consent}</span>}
           <div className="submit-button-conteiner">
             <button className="submit-button" type="submit">Submit</button>
           </div>
