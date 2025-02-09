@@ -149,6 +149,7 @@ body {
 .message-header {
   font-weight: normal;
 }
+
 .first-header {
   font-size: 28px;
 }
@@ -194,7 +195,8 @@ body {
 
 @media screen and (max-width: 320px) {
   .main-conteiner {
-    width: 80%;
+    margin-left: 5%;
+    width: 90%;
     height: 50%;
   }
   .form-contact {
@@ -214,7 +216,14 @@ body {
     flex-direction: column;
   }
   .last-input {
-    margin-top: 4%;
+    gap: 50px;
+    margin-top: 10%;
+  }
+  .first-input {
+    margin-top: 25%;
+  }
+  .general-query-header {
+    margin-top: 18%;
   }
   .last-input,
   .first-input,
@@ -222,14 +231,16 @@ body {
     padding: 10px 10px;
   }
   .last-name-header {
-    margin-top: 35%;
+    margin-top: 44%;
     position: absolute;
   }
   .first-name-header {
-    margin-top: 4%;
+    margin-top: 8%;
+    position: absolute;
   }
   .email-header {
-    margin-top: 10%;
+    margin-top: 18%;
+    
   }
   .general-query-conteiner {
     gap: 0px;
@@ -243,24 +254,39 @@ body {
   .error-text-first-input,
   .error-text-last-input,
   .error-text-message,
-  .error-text-consent {
+  .error-text-consent, 
+  .error-text-email-input  {
     position: absolute;
     color: red;
   }
-  .error-text-first-input {
-    margin-top: 14%;
+  .error-text-first-input  {
+    margin-top: 33%;
   }
   .error-text-last-input {
-    margin-top: 45%;
+    margin-top: 69%;
   }
-  .error-text-email-input {
+  .error-text-email-input
+  {
     margin-top: 14%;
   }
   .error-text-buttons {
-    margin-top: 3%;
+    margin-top: 2%;
     color: red;
   }
   .error-text-message {
-    margin-top: 40%;
+    margin-top: 39%;
+  }
+  .success-message {
+    display: flex;
+    width: 65%;
+    height: 7%;
+    flex-direction: column;
+    margin-left: 13%;
+    text-align: center;
+  }
+  .message-strong {
+    text-align: center;
+    margin: 0px;
   }
 }
+
