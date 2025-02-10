@@ -193,6 +193,104 @@ body {
   margin: 2%;
 }
 
+@media screen and (max-width: 375px) {
+  .main-conteiner {
+    margin-left: 5%;
+    width: 90%;
+    height: 40%;
+  }
+  .name-main {
+    gap: 0px;
+  }
+  .name-inputs-conteiner {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .general-query-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .last-input {
+    margin-top: 26%;
+  }
+  .first-input {
+    margin-top: 10%;
+  }
+  .general-query-header {
+    margin-top: 13%;
+  }
+  .last-input,
+  .first-input,
+  .email-input {
+    padding: 10px 10px;
+  }
+  .last-name-header {
+    margin-top: 34%;
+    position: absolute;
+  }
+  .first-name-header {
+    margin-top: 1%;
+    position: absolute;
+  }
+  .email-header {
+    margin-top: 13%;
+  }
+  .general-query-conteiner {
+    gap: 0px;
+  }
+  .message-header {
+    margin-top: 9%;
+  }
+  .consent-button-conteiner {
+    margin-top: 15%;
+  }
+  .submit-button-conteiner {
+    margin-top: 20%;
+  }
+  .success-message {
+    display: flex;
+    width: 75%;
+    height: 7%;
+    flex-direction: column;
+    margin-left: 10%;
+    text-align: center;
+    padding: 10px 10px;
+  }
+  .message-strong {
+    text-align: center;
+    margin: 0px;
+  }
+  .error-text-first-input {
+    color: red;
+    margin-top: 0%;
+  }
+  .error-text-last-input {
+    color: red;
+  }
+  .error-text-email-input {
+    margin-top: 12%;
+  }
+  .error-text-buttons {
+    margin-top: 3%;
+    color: red;
+  }
+  .error-text-message {
+    margin-top: 34%;
+  }
+  .error-text-consent
+  {
+    margin-top: 4%;
+  }
+  .error-text-message,
+  .error-text-consent, 
+  .error-text-email-input  {
+    position: absolute;
+    color: red;
+  }
+  
+}
+
 @media screen and (max-width: 320px) {
   .main-conteiner {
     margin-left: 5%;
@@ -240,7 +338,6 @@ body {
   }
   .email-header {
     margin-top: 18%;
-    
   }
   .general-query-conteiner {
     gap: 0px;
@@ -250,6 +347,18 @@ body {
   }
   .submit-button-conteiner {
     margin-top: 26%;
+  }
+  .success-message {
+    display: flex;
+    width: 65%;
+    height: 7%;
+    flex-direction: column;
+    margin-left: 13%;
+    text-align: center;
+  }
+  .message-strong {
+    text-align: center;
+    margin: 0px;
   }
   .error-text-first-input,
   .error-text-last-input,
@@ -276,17 +385,6 @@ body {
   .error-text-message {
     margin-top: 39%;
   }
-  .success-message {
-    display: flex;
-    width: 65%;
-    height: 7%;
-    flex-direction: column;
-    margin-left: 13%;
-    text-align: center;
-  }
-  .message-strong {
-    text-align: center;
-    margin: 0px;
-  }
+  
 }
 
