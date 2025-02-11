@@ -192,6 +192,346 @@ body {
 .message-success-paragraf {
   margin: 2%;
 }
+@media screen and (max-width: 2560px) {
+  .main-conteiner {
+    width: 75%;
+    margin-left: 13%;
+  }
+  .name-inputs-conteiner {
+  gap: 15px ;
+  }
+  .email-header {
+    margin-top: 4%;
+  }
+  .general-query-header {
+    margin-top: 4%;
+  }
+  .last-name-header {
+    margin-left: 6%;
+  }
+  .consent-button-conteiner {
+    margin-top: 4%;
+  }
+  .first-name-header, .last-name-header, .email-header, .general-query-header, .message-header, .consent-text, .submit-button {
+    font-size: 26px;
+  }
+  .first-input, .last-input, .email-input, .message-input, .query-button {
+font-size: 20px;
+  }
+  .message-strong {
+    margin-left: 4%;
+    font-size: 24px;
+  }
+  .success-message  {
+    display: flex;
+    width: 65%;
+    height: 9%;
+    flex-direction: column;
+    margin-left: 17%;
+    justify-content: center;
+        align-items: center;
+        font-size: 20px;
+  }
+  .error-text-message,
+  .error-text-consent, 
+  .error-text-email-input,
+  .error-text-buttons,
+  .error-text-first-input,
+  .error-text-last-input {
+    color: red;
+    font-size: 20px;
+  } 
+  .error-text-first-input, .error-text-last-input {
+    position: absolute;
+  }
+  .error-text-first-input {
+    margin-top: 2.7%;
+  }
+  .error-text-last-input {
+    margin: 2.7% 35%;
+  }
+  .error-text-email-input {
+    position: absolute;
+    margin-top: 2.7%;
+  }
+  .error-text-message {
+    position: absolute;
+    margin-top: 7%;
+  }
+}
+
+@media screen and (max-width:1440px) {
+  .main-conteiner {
+    width: 75%;
+    margin-left: 13%;
+  }
+  .first-header {
+    font-size: 34px;
+  }
+  .last-name-header {
+    margin-left: 2.5%;
+  }
+  .first-name-header, .last-name-header, .email-header, .general-query-header, .message-header, .consent-text, .submit-button {
+    font-size: 28px;
+  }
+  .query-button {
+    font-size: 24px;
+  }
+  .email-main {
+    margin-top: 6%;
+  }
+  .name-inputs-conteiner {
+    gap: 15px ;
+  }
+  .general-query-conteiner {
+    margin-top: 3.5%;
+  }
+  .consent-button-conteiner {
+    margin-top: 5.5%;
+  }
+  .submit-button-conteiner {
+    margin-top: 4%;
+  }
+  .error-text-message,
+  .error-text-consent, 
+  .error-text-email-input,
+  .error-text-buttons,
+  .error-text-first-input,
+  .error-text-last-input {
+    color: red;
+    font-size: 20px;
+  } 
+  .error-text-first-input, .error-text-last-input {
+    position: absolute;
+  }
+  .error-text-first-input {
+    margin-top: 3.5%;
+  }
+  .error-text-last-input {
+    margin: 3.5% 35%;
+  }
+  .error-text-email-input {
+    position: absolute;
+    margin-top: 3.5%;
+  }
+  .error-text-message {
+    margin-top: 9%;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .main-conteiner {
+    margin-left: 18%;
+    width: 65%;
+  }
+  .success-message {
+    margin-left: 26.5%;
+  }
+  .name-inputs-conteiner {
+    gap: 15px ;
+  }
+  .general-query-conteiner{
+    margin-top: 4%;
+  }
+  .email-header {
+    margin-top: 6%;
+  }
+  .consent-button-conteiner {
+    margin-top: 8%;
+  }
+  .first-name-header, .last-name-header, .email-header, .general-query-header, .message-header, .consent-text, .submit-button {
+    font-size: 24px;
+  }
+  .first-input, .last-input, .email-input, .message-input, .query-button {
+    font-size: 18px;
+      }
+  .message-strong {
+    font-size: 22px;
+  }
+  .success-message {
+    margin-left: 24%;
+    width: 50%;
+    height: 5%;
+    font-size: 18px;
+  }
+  .error-text-message,
+  .error-text-consent, 
+  .error-text-email-input,
+  .error-text-buttons,
+  .error-text-first-input,
+  .error-text-last-input {
+    color: red;
+  } 
+  .error-text-email-input {
+    position: absolute;
+    margin-top: 4.5%;
+  }
+  .error-text-first-input {
+    position: absolute;
+    margin-top: 4.5%;
+  }
+  .error-text-last-input {
+    margin: 4.5% 31%;
+    position: absolute;
+  }
+  .error-text-message{
+    margin-top: 12.5%;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-conteiner {
+    margin-left: 2.5%;
+    width: 95%;
+    height: 40%;
+  }
+  .name-inputs-conteiner {
+    display: flex;
+    flex-direction: column;
+  }
+  .general-query-header {
+    margin-top: 5%;
+  }
+  .general-query-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .last-input {
+    margin-top: 10%;
+  }
+  .last-name-header {
+    margin-top: 19%;
+    position: absolute;
+  }
+  .consent-button-conteiner {
+    margin-top: 8%;
+  }
+  .submit-button-conteiner {
+    margin-top: 6%;
+  }
+  
+  .success-message, .message-strong {
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    margin-left: 10%;
+    justify-content: center;
+        align-items: center;
+  }
+  .error-text-message,
+  .error-text-consent, 
+  .error-text-email-input,
+  .error-text-buttons,
+  .error-text-first-input,
+  .error-text-last-input {
+    color: red;
+  } 
+  .error-text-email-input {
+    position:absolute;
+    margin-top: 6%;
+  }
+  .error-text-message {
+    position: absolute;
+    margin-top: 17%;
+  }
+  
+}
+
+@media screen  and (max-width: 425px){
+  .main-conteiner {
+    margin-left: 2%;
+    width: 95%;
+    height: 40%;
+  }
+  .name-main {
+    gap: 10px;
+  }
+  .name-inputs-conteiner {
+    display: flex;
+    flex-direction: column;
+  }
+  .general-query-header {
+    margin-top: 18%;
+  }
+  .general-query-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .last-input {
+    margin-top: 18%;
+  }
+  .first-input {
+    margin-top: 5%;
+  }
+  .last-input,
+  .first-input,
+  .email-input {
+    padding: 10px 10px;
+  }
+  .last-name-header {
+    margin-top: 40%;
+    position: absolute;
+  }
+  
+  .email-header {
+    margin-top: 13%;
+  }
+  .message-header {
+    margin-top: 9%;
+  }
+  .general-query-conteiner {
+    gap: 0px;
+  }
+  .consent-button-conteiner {
+    margin-top: 15%;
+  }
+  .submit-button-conteiner {
+    margin-top: 20%;
+  }
+  .success-message {
+    display: flex;
+    width: 75%;
+    height: 7%;
+    flex-direction: column;
+    margin-left: 8.5%;
+    text-align: center;
+    
+  }
+  .message-strong {
+    text-align: center;
+    margin: 0px;
+  }
+  .error-text-first-input {
+    color: red;
+    margin-top: 0%;
+  }
+  .error-text-last-input {
+    color: red;
+
+  }
+  .error-text-email-input {
+    margin-top: 12%;
+  }
+  .error-text-buttons {
+    margin-top: 3%;
+    color: red;
+  }
+  .error-text-message {
+    margin-top: 30%;
+  }
+  .error-text-consent
+  {
+    margin-top: 3%;
+  }
+  .error-text-message,
+  .error-text-consent, 
+  .error-text-email-input  {
+    position: absolute;
+    color: red;
+  }
+}
 
 @media screen and (max-width: 375px) {
   .main-conteiner {
